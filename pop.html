@@ -1,0 +1,152 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
+    <script type="text/javascript" src="http://tools.mybloggertricks.com/mbt-popup.js"></script> 
+    <script type='text/javascript'>  
+    //<![CDATA[
+    //Setting Time             
+    TargetDate = "12/25/2024 12:00 AM";             
+    CountActive = true;             
+    CountStepper = -1;             
+    LeadingZero = true;             
+    DisplayFormat = "%%D%% days: %%H%% hrs: %%M%% mins: %%S%% secs";             
+    FinishMessage = "It is finally here!";
+
+        
+    //Hiding snowfall             
+       $(document).ready(function(){                            
+       $('a.close-reveal-modal').click(function() 
+       {$(document).snowfall('clear');
+       });                 
+       
+       //Setting cookie                                
+       if(sessionStorage.getItem("Hide-MBT-Popup") == 1) {                 
+        $(document).snowfall('clear');                 
+        $(document).snowfall.hide();                 
+        $("#myModal").hide();                                 }                 
+        sessionStorage.setItem("Hide-MBT-Popup", 1);                                
+        });                                                 
+        $(function() {                         
+        // Setting Animation                         
+        $('#myModal').reveal({                  
+        animation: 'fadeAndPop',                   
+        //fade, fadeAndPop, none                  
+        animationspeed: 300,                       
+        //how fast animtions are                  
+        closeonbackgroundclick: false,              
+        //if you click background will modal close?                 
+        dismissmodalclass: 'close-reveal-modal'    
+        //the class of a button or element that will close an open modal             
+        });                         
+        //Revealing Snowfall             
+        $(document).snowfall({deviceorientation : true, round : true, minSize: 1, maxSize:8,  flakeCount : 250});                         });                         //]]>        
+    </script>         
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'/>
+
+ </head>
+
+ <style>
+
+#mbt-counter { 
+            padding: 10px;         
+            font-family: oswald, verdana;         
+            background-color: rgba(0, 0, 0, 0)!important;         
+            color: #FFF!important;         
+            position: absolute;         
+            left: 53%;         
+            top: 68%;         
+            font-size: 17px; 
+            }
+
+.reveal-modal h1 {
+             position: absolute;         
+             left: 45%;         
+             font-size: 3em;         
+             color: #FFEA00;         
+             font-family: oswald;         
+             top: 30%;         
+             text-shadow: 2px 4px 12px #000; 
+            }         
+.reveal-modal h2 {         
+             position: absolute;         
+             left: 57%;         
+             top: 20%;         
+             font-family: oswald, arial;         
+             font-size: 1.7em;         
+             text-shadow: 2px 4px 10px #000;         
+             color: #FFF; 
+            }          
+.reveal-modal-bg {         
+             position: fixed;         
+             height: 100%;         
+             width: 100%;         
+             background: rgba(0,0,0,.8);         
+             z-index: 100;         
+             display: none;         
+             top: 0;         
+             left: 0;         
+            }         
+.reveal-modal {         
+            visibility: hidden;         
+            left: 50%;         
+            top:170px;         
+            margin-left: -300px;         
+            width: 550px;         
+            height: 305px;         
+            background: rgba(51, 51, 51, 0) url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh99z8yytTnbeXG37J2ik-IT0WYhSC7XLCF7cyGfj-1clIUc85sFvpZUAFputf64xaqodWkeRzxJujzcxVBaMHXAHMhc_sI0LQOziEc7wq-dwrxXZE9wPSKOu9_1SKFyh8b-ugOc_43ZQs/s1600/christmas.png) no-repeat -17px 0px;         
+            position: absolute;         
+            z-index: 101;         
+            padding: 30px 40px 34px;         
+            -moz-border-radius: 8px;         
+            -webkit-border-radius: 8px;         
+            border-radius: 8px;         
+            color: #FFF;         
+            }             
+.reveal-modal.small{ 
+            width: 200px; 
+            margin-left: -140px;
+           }     
+.reveal-modal.medium{ 
+           width: 400px; 
+           margin-left: -240px;
+           }   
+.reveal-modal.large{ 
+           width: 600px; 
+           margin-left: -340px;
+          }    
+.reveal-modal.xlarge{ 
+          width: 800px; 
+          margin-left: -440px;
+          }         
+.reveal-modal .close-reveal-modal {         
+         font-size: 32px;         
+         line-height: .5;         
+         position: absolute;         
+         top: 25px;         
+         right: 25px;         
+         color: #bebebe;         
+         text-shadow: 0 -1px 1px rbga(0,0,0,.6);         
+         font-weight: bold;         
+         cursor: pointer;         }               
+.reveal-modal .close-reveal-modal:hover {             
+         color:#2d2d2f;         
+         }
+
+ </style>
+ <body>
+
+    <div id="myModal" class="reveal-modal" >
+             <h2>Count Down Begins!</h2>     
+             <h1>Happy holidays!</h1>     
+    <script type='text/javascript' src="http://tools.mybloggertricks.com/mbt-counter.js"></script>
+            <a class="close-reveal-modal">&#215;</a>     
+    </div>
+    
+ </body>
+ </html>
